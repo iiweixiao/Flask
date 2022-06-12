@@ -13,8 +13,6 @@ def add_user():
     password = request.form.get('password')
     mobile = request.form.get('mobile')
 
-    print(username, password, mobile)
-
     # 1. 连接数据库
     conn = pymysql.connect(host='127.0.0.1',
                            port=3306,
