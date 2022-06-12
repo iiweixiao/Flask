@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <input type="text" id="txt">
+    <input type="button" id="btn" value="添加">
+</div>
+<div class="container" style="width: 500px; height: 300px; background: #b0b0b0; padding: 10px; margin-top: 10px;">
+    <li>Tony</li>
+    <li>Harry</li>
+    <li>Jerry</li>
+</div>
+
+<script src="../jquery-3.6.0.min.js"></script>
+<script>
+    $("#btn").click(function (){
+        var content = $("#txt").val()
+        $(".container").append($("<li>").text(content))
+        $("#txt").val("")
+    })
+    $(".container").on("click", 'li', function (){
+        $(this).remove()
+    })
+</script>
+</body>
+</html>

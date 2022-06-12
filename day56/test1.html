@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<h1>表格</h1>
+<div>
+    <div class="se">全选<input type="checkbox" id="v1"></div>
+    <div class="nose hide">取消<input type="checkbox" id="v2"></div>
+    <div>反选<input type="checkbox" id="v3"></div>
+</div>
+<table style="border: 1px solid silver;">
+    <thead>
+    <tr>
+        <th>选择</th>
+        <th>姓名</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>
+            <input type="checkbox">
+        </td>
+        <td>John</td>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox">
+        </td>
+        <td>Tony</td>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox">
+        </td>
+        <td>Mary</td>
+    </tr>
+    </tbody>
+</table>
+
+<script src="jquery-3.6.0.min.js"></script>
+<script>
+    $("#v1").click(function () {
+        $("table input").prop("checked", true)
+        $(".nose").removeClass("hide")
+        $(".se").addClass("hide")
+    })
+    $("#v2").click(function () {
+        $("table input").prop("checked", false)
+        $(".se").removeClass("hide")
+        $(".nose").addClass("hide")
+    })
+    $("#v3").click(function () {
+        $("table input").each(function () {
+            var status = $(this).prop("checked");
+            $(this).prop("checked", !status)
+
+        })
+    })
+
+</script>
+</body>
+</html>
+</body>
+</html>

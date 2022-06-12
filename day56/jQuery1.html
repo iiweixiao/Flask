@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .group {
+            border: 1px solid #ddd;
+            width: 400px;
+
+        }
+
+        .header {
+            background: gold;
+
+        }
+
+        .group a {
+            display: block;
+        }
+
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="group">
+    <div class="item">
+        <div class="header">头部1</div>
+        <div class="menu">
+            <a>麻婆豆腐</a>
+            <a>青椒肉丝</a>
+            <a>糖醋里脊</a>
+        </div>
+    </div>
+    <div class="item">
+        <div class="header">头部2</div>
+        <div class="menu">
+            <a>麻婆豆腐</a>
+            <a>青椒肉丝</a>
+            <a>糖醋里脊</a>
+        </div>
+    </div>
+    <div class="item">
+        <div class="header">头部3</div>
+        <div class="menu">
+            <a>麻婆豆腐</a>
+            <a>青椒肉丝</a>
+            <a>糖醋里脊</a>
+        </div>
+    </div>
+
+</div>
+
+<script src="jquery-3.6.0.min.js"></script>
+<script>
+    $(".header").click(function () {
+        // 点击显示/隐藏下方标签的内容
+        $(this).next().toggleClass("hide");
+        // 同时隐藏兄弟节点下方标签的内容
+        $(this).parent().siblings().find(".menu").addClass("hide")
+    })
+</script>
+</body>
+</html>
